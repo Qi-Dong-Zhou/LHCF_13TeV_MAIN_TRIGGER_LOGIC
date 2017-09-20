@@ -1,0 +1,33 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'CLK_40to80|altpll_component|pll|clk[1]'
+Slack : 2.823
+TNS   : 0.000
+
+Type  : Setup 'CLK_40to80|altpll_component|pll|clk[0]'
+Slack : 3.552
+TNS   : 0.000
+
+Type  : Hold 'CLK_40to80|altpll_component|pll|clk[0]'
+Slack : 0.644
+TNS   : 0.000
+
+Type  : Hold 'CLK_40to80|altpll_component|pll|clk[1]'
+Slack : 0.804
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'CLK_40to80|altpll_component|pll|clk[0]'
+Slack : 5.016
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'CLK_40to80|altpll_component|pll|clk[1]'
+Slack : 11.266
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'LHCCLK'
+Slack : 12.500
+TNS   : 0.000
+
+------------------------------------------------------------

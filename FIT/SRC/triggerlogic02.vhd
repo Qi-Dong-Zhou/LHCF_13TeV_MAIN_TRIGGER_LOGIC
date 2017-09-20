@@ -1,0 +1,100 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    17:41:12 01/10/2008 
+-- Design Name: 
+-- Module Name:    triggerlogic02 - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+---- Uncomment the following library declaration if instantiating
+---- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity triggerlogic02 is
+port(
+	CLK 	   : in  std_logic ;
+	TRIG     : in  std_logic ; -- BPTX
+	SDSC     : in  std_logic_vector(15 downto 0);  -- discriminator out of small tower 
+ 	LDSC     : in  std_logic_vector(15 downto 0);  -- discriminator out of large tower
+	CLEAR    : in  std_logic ; -- pattern clear
+	STRIG1   : out std_logic ; -- logic out of small tower 
+	LTRIG1   : out std_logic ; -- logic out of large tower	
+	STRIG2   : out std_logic ; -- coincidence with bptx1 
+	LTRIG2   : out std_logic ; -- coincidence with bptx1
+	SPATTERN : out std_logic_vector(15 downto 0); -- discriminator pattern of s 
+	LPATTERN : out std_logic_vector(15 downto 0)); -- discriminator pattern of s
+end triggerlogic02;
+
+architecture Behavioral of triggerlogic02 is
+	signal SLOGIC : std_logic;
+	signal LLOGIC : std_logic;
+begin
+
+-- trigger logic 
+	SLOGIC <= ( SDSC(0) and SDSC(1) and SDSC(2) ) 
+			or ( SDSC(1) and SDSC(2) and SDSC(3) )
+			or ( SDSC(2) and SDSC(3) and SDSC(4) )	
+			or ( SDSC(3) and SDSC(4) and SDSC(5) )
+			or ( SDSC(4) and SDSC(5) and SDSC(6) )
+			or ( SDSC(5) and SDSC(6) and SDSC(7) )
+			or ( SDSC(6) and SDSC(7) and SDSC(8) )
+			or ( SDSC(7) and SDSC(8) and SDSC(9) )
+			or ( SDSC(8) and SDSC(9) and SDSC(10) )
+			or ( SDSC(9) and SDSC(10) and SDSC(11) )
+			or ( SDSC(10) and SDSC(11) and SDSC(12) )
+			or ( SDSC(11) and SDSC(12) and SDSC(13) )
+			or ( SDSC(12) and SDSC(13) and SDSC(14) )
+			or ( SDSC(13) and SDSC(14) and SDSC(15) );
+
+	LLOGIC <= ( LDSC(0) and LDSC(1) and LDSC(2) ) 
+			or ( LDSC(1) and LDSC(2) and LDSC(3) )
+			or ( LDSC(2) and LDSC(3) and LDSC(4) )	
+			or ( LDSC(3) and LDSC(4) and LDSC(5) )
+			or ( LDSC(4) and LDSC(5) and LDSC(6) )
+			or ( LDSC(5) and LDSC(6) and LDSC(7) )
+			or ( LDSC(6) and LDSC(7) and LDSC(8) )
+			or ( LDSC(7) and LDSC(8) and LDSC(9) )
+			or ( LDSC(8) and LDSC(9) and LDSC(10) )
+			or ( LDSC(9) and LDSC(10) and LDSC(11) )
+			or ( LDSC(10) and LDSC(11) and LDSC(12) )
+			or ( LDSC(11) and LDSC(12) and LDSC(13) )
+			or ( LDSC(12) and LDSC(13) and LDSC(14) )
+			or ( LDSC(13) and LDSC(14) and LDSC(15) );
+
+
+			
+	STRIG1 <= SLOGIC;
+	LTRIG1 <= LLOGIC;
+	STRIG2 <= SLOGIC and TRIG;
+	LTRIG2 <= LLOGIC and TRIG;
+-- for timing 
+	process(CLK) begin
+		if(CLK'event and CLK='1') then
+			if(TRIG='1') then
+				SPATTERN <= SDSC;
+				LPATTERN <= LDSC;
+			elsif (CLEAR = '1') then 
+				SPATTERN <= (others=>'0');
+				LPATTERN <= (others=>'0');			
+			end if;
+		end if;
+	end process;
+end Behavioral;
+

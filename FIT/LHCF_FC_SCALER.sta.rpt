@@ -1,0 +1,1279 @@
+TimeQuest Timing Analyzer report for LHCF_FC_SCALER
+Wed May 13 12:12:54 2015
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. SDC File List
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'CLK_40to80|altpll_component|pll|clk[1]'
+ 12. Setup: 'CLK_40to80|altpll_component|pll|clk[0]'
+ 13. Hold: 'CLK_40to80|altpll_component|pll|clk[0]'
+ 14. Hold: 'CLK_40to80|altpll_component|pll|clk[1]'
+ 15. Minimum Pulse Width: 'CLK_40to80|altpll_component|pll|clk[0]'
+ 16. Minimum Pulse Width: 'CLK_40to80|altpll_component|pll|clk[1]'
+ 17. Minimum Pulse Width: 'LHCCLK'
+ 18. Setup Times
+ 19. Hold Times
+ 20. Clock to Output Times
+ 21. Minimum Clock to Output Times
+ 22. Propagation Delay
+ 23. Minimum Propagation Delay
+ 24. Setup Transfers
+ 25. Hold Transfers
+ 26. Report TCCS
+ 27. Report RSKM
+ 28. Unconstrained Paths
+ 29. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                    ;
++--------------------+-----------------------------------------------------------------+
+; Quartus II Version ; Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; LHCF_FC_SCALER                                                  ;
+; Device Family      ; Cyclone                                                         ;
+; Device Name        ; EP1C20F400C6                                                    ;
+; Timing Models      ; Final                                                           ;
+; Delay Model        ; Slow Model                                                      ;
+; Rise/Fall Delays   ; Unavailable                                                     ;
++--------------------+-----------------------------------------------------------------+
+
+
++---------------------------------------------------------+
+; SDC File List                                           ;
++---------------------+--------+--------------------------+
+; SDC File Path       ; Status ; Read at                  ;
++---------------------+--------+--------------------------+
+; LHCF_LOGIC_MAIN.sdc ; OK     ; Wed May 13 12:12:53 2015 ;
++---------------------+--------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                                                ;
++----------------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+------------------------------------------+--------------------------------------------+
+; Clock Name                             ; Type      ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source                                   ; Targets                                    ;
++----------------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+------------------------------------------+--------------------------------------------+
+; CLK_40to80|altpll_component|pll|clk[0] ; Generated ; 12.500 ; 80.0 MHz  ; 0.000 ; 6.250  ; 50.00      ; 1         ; 2           ;       ;        ;           ;            ; false    ; LHCCLK ; CLK_40to80|altpll_component|pll|inclk[0] ; { CLK_40to80|altpll_component|pll|clk[0] } ;
+; CLK_40to80|altpll_component|pll|clk[1] ; Generated ; 25.000 ; 40.0 MHz  ; 0.000 ; 12.500 ; 50.00      ; 1         ; 1           ;       ;        ;           ;            ; false    ; LHCCLK ; CLK_40to80|altpll_component|pll|inclk[0] ; { CLK_40to80|altpll_component|pll|clk[1] } ;
+; LHCCLK                                 ; Base      ; 25.000 ; 40.0 MHz  ; 0.000 ; 12.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;                                          ; { GIN[0] }                                 ;
++----------------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+------------------------------------------+--------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Fmax Summary                                                                 ;
++------------+-----------------+----------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                             ; Note ;
++------------+-----------------+----------------------------------------+------+
+; 111.76 MHz ; 111.76 MHz      ; CLK_40to80|altpll_component|pll|clk[0] ;      ;
+; 233.75 MHz ; 233.75 MHz      ; CLK_40to80|altpll_component|pll|clk[1] ;      ;
++------------+-----------------+----------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------------------------------+
+; Setup Summary                                                  ;
++----------------------------------------+-------+---------------+
+; Clock                                  ; Slack ; End Point TNS ;
++----------------------------------------+-------+---------------+
+; CLK_40to80|altpll_component|pll|clk[1] ; 2.823 ; 0.000         ;
+; CLK_40to80|altpll_component|pll|clk[0] ; 3.552 ; 0.000         ;
++----------------------------------------+-------+---------------+
+
+
++----------------------------------------------------------------+
+; Hold Summary                                                   ;
++----------------------------------------+-------+---------------+
+; Clock                                  ; Slack ; End Point TNS ;
++----------------------------------------+-------+---------------+
+; CLK_40to80|altpll_component|pll|clk[0] ; 0.644 ; 0.000         ;
+; CLK_40to80|altpll_component|pll|clk[1] ; 0.804 ; 0.000         ;
++----------------------------------------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++-----------------------------------------------------------------+
+; Minimum Pulse Width Summary                                     ;
++----------------------------------------+--------+---------------+
+; Clock                                  ; Slack  ; End Point TNS ;
++----------------------------------------+--------+---------------+
+; CLK_40to80|altpll_component|pll|clk[0] ; 5.016  ; 0.000         ;
+; CLK_40to80|altpll_component|pll|clk[1] ; 11.266 ; 0.000         ;
+; LHCCLK                                 ; 12.500 ; 0.000         ;
++----------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'CLK_40to80|altpll_component|pll|clk[1]'                                                                                                                                                                                                                  ;
++-------+--------------------------------------------------------------------------+----------------------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack ; From Node                                                                ; To Node                                            ; Launch Clock                           ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------------------+----------------------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; 2.823 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[2]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.006     ; 9.642      ;
+; 2.823 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[3]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.006     ; 9.642      ;
+; 2.823 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[1]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.006     ; 9.642      ;
+; 2.823 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[0]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.006     ; 9.642      ;
+; 2.960 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30]                                     ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|COUNT[2]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.006     ; 9.505      ;
+; 2.960 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30]                                     ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|COUNT[3]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.006     ; 9.505      ;
+; 2.960 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30]                                     ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|COUNT[1]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.006     ; 9.505      ;
+; 2.960 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30]                                     ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|COUNT[0]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.006     ; 9.505      ;
+; 2.978 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|CHECK             ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.006     ; 9.487      ;
+; 2.983 ; SYC_WIDTH:A2_DSC_WIDTH|SYNCHRONIZE:\Syc_SDSC_GEN:4:SYC_SDSC|OUTPUT       ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|CHECK      ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 9.494      ;
+; 3.024 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:3:WIDTH_SDSC|TSTAT  ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|CHECK      ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 9.453      ;
+; 3.095 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|TSTAT             ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.006     ; 9.370      ;
+; 3.159 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[2]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 9.237      ;
+; 3.159 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[3]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 9.237      ;
+; 3.159 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[1]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 9.237      ;
+; 3.159 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[0]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 9.237      ;
+; 3.263 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:4:WIDTH_SDSC|TSTAT  ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|CHECK      ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 9.214      ;
+; 3.272 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[2]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 9.124      ;
+; 3.272 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[3]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 9.124      ;
+; 3.272 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[1]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 9.124      ;
+; 3.272 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[0]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 9.124      ;
+; 3.304 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[2]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 9.092      ;
+; 3.304 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[3]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 9.092      ;
+; 3.304 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[1]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 9.092      ;
+; 3.304 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[0]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 9.092      ;
+; 3.309 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[2]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 9.087      ;
+; 3.309 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[3]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 9.087      ;
+; 3.309 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[1]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 9.087      ;
+; 3.309 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[0]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 9.087      ;
+; 3.311 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30]                                     ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|COUNT[2]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.069      ; 9.229      ;
+; 3.311 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30]                                     ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|COUNT[3]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.069      ; 9.229      ;
+; 3.311 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30]                                     ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|COUNT[1]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.069      ; 9.229      ;
+; 3.311 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30]                                     ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|COUNT[0]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.069      ; 9.229      ;
+; 3.431 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|TSTAT             ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.965      ;
+; 3.440 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35]                                     ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[2]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.956      ;
+; 3.440 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35]                                     ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[3]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.956      ;
+; 3.440 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35]                                     ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[1]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.956      ;
+; 3.440 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35]                                     ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[0]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.956      ;
+; 3.447 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35]                                     ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[2]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.949      ;
+; 3.447 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35]                                     ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[3]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.949      ;
+; 3.447 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35]                                     ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[1]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.949      ;
+; 3.447 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35]                                     ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[0]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.949      ;
+; 3.465 ; SYC_WIDTH:A2_DSC_WIDTH|SYNCHRONIZE:\Syc_SDSC_GEN:4:SYC_SDSC|OUTPUT       ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[2]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 9.012      ;
+; 3.465 ; SYC_WIDTH:A2_DSC_WIDTH|SYNCHRONIZE:\Syc_SDSC_GEN:4:SYC_SDSC|OUTPUT       ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[3]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 9.012      ;
+; 3.465 ; SYC_WIDTH:A2_DSC_WIDTH|SYNCHRONIZE:\Syc_SDSC_GEN:4:SYC_SDSC|OUTPUT       ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[1]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 9.012      ;
+; 3.465 ; SYC_WIDTH:A2_DSC_WIDTH|SYNCHRONIZE:\Syc_SDSC_GEN:4:SYC_SDSC|OUTPUT       ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[0]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 9.012      ;
+; 3.471 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30]                                     ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|CHECK          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.006     ; 8.994      ;
+; 3.491 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[1]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[2]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.905      ;
+; 3.491 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[1]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[3]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.905      ;
+; 3.491 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[1]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[1]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.905      ;
+; 3.491 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[1]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[0]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.905      ;
+; 3.505 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:10:WIDTH_LDSC|TSTAT ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|CHECK      ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.891      ;
+; 3.506 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:3:WIDTH_SDSC|TSTAT  ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[2]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 8.971      ;
+; 3.506 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:3:WIDTH_SDSC|TSTAT  ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[3]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 8.971      ;
+; 3.506 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:3:WIDTH_SDSC|TSTAT  ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[1]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 8.971      ;
+; 3.506 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:3:WIDTH_SDSC|TSTAT  ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[0]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 8.971      ;
+; 3.510 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:1:WIDTH_SDSC|TSTAT  ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|CHECK      ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 8.967      ;
+; 3.511 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30]                                     ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|TSTAT          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.006     ; 8.954      ;
+; 3.524 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[10]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[2]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.872      ;
+; 3.524 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[10]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[3]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.872      ;
+; 3.524 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[10]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[1]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.872      ;
+; 3.524 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[10]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[0]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.872      ;
+; 3.544 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|TSTAT             ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.852      ;
+; 3.553 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]                                      ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[2]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.843      ;
+; 3.553 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]                                      ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[3]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.843      ;
+; 3.553 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]                                      ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[1]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.843      ;
+; 3.553 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]                                      ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[0]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.843      ;
+; 3.557 ; SYC_WIDTH:A2_DSC_WIDTH|SYNCHRONIZE:\Syc_SDSC_GEN:3:SYC_SDSC|OUTPUT       ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|CHECK      ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 8.920      ;
+; 3.559 ; SYC_WIDTH:A2_DSC_WIDTH|SYNCHRONIZE:\SYC_LDSC_GEN:0:SYC_LDSC|OUTPUT       ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|CHECK      ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 8.918      ;
+; 3.560 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]                                      ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[2]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.836      ;
+; 3.560 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]                                      ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[3]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.836      ;
+; 3.560 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]                                      ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[1]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.836      ;
+; 3.560 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]                                      ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[0]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.836      ;
+; 3.576 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|TSTAT             ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.820      ;
+; 3.581 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|TSTAT             ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.815      ;
+; 3.585 ; SYC_WIDTH:A2_DSC_WIDTH|SYNCHRONIZE:\Syc_SDSC_GEN:4:SYC_SDSC|OUTPUT       ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_LOGIC|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 8.892      ;
+; 3.585 ; SYC_WIDTH:A2_DSC_WIDTH|SYNCHRONIZE:\Syc_SDSC_GEN:4:SYC_SDSC|OUTPUT       ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_LOGIC|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 8.892      ;
+; 3.585 ; SYC_WIDTH:A2_DSC_WIDTH|SYNCHRONIZE:\Syc_SDSC_GEN:4:SYC_SDSC|OUTPUT       ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_LOGIC|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 8.892      ;
+; 3.585 ; SYC_WIDTH:A2_DSC_WIDTH|SYNCHRONIZE:\Syc_SDSC_GEN:4:SYC_SDSC|OUTPUT       ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_LOGIC|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; 0.006      ; 8.892      ;
+; 3.585 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]                                      ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[2]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.811      ;
+; 3.585 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]                                      ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[3]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.811      ;
+; 3.585 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]                                      ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[1]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.811      ;
+; 3.585 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]                                      ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[0]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.811      ;
+; 3.590 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39]                                     ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[2]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.806      ;
+; 3.590 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39]                                     ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[3]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.806      ;
+; 3.590 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39]                                     ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[1]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.806      ;
+; 3.590 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39]                                     ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[0]   ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.806      ;
+; 3.592 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]                                      ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[2]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.804      ;
+; 3.592 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]                                      ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[3]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.804      ;
+; 3.592 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]                                      ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[1]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.804      ;
+; 3.592 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]                                      ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[0]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.804      ;
+; 3.597 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39]                                     ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[2]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.799      ;
+; 3.597 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39]                                     ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[3]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.799      ;
+; 3.597 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39]                                     ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[1]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.799      ;
+; 3.597 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39]                                     ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[0]       ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.799      ;
+; 3.606 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[0]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[2]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.790      ;
+; 3.606 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[0]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[3]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.790      ;
+; 3.606 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[0]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[1]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.790      ;
+; 3.606 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[0]                                      ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[0]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.790      ;
+; 3.618 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[64]                                     ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[2]          ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 12.500       ; -0.075     ; 8.778      ;
++-------+--------------------------------------------------------------------------+----------------------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'CLK_40to80|altpll_component|pll|clk[0]'                                                                                                                                                                                ;
++-------+--------------------------------------+------------------------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack ; From Node                            ; To Node                                              ; Launch Clock                           ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------+------------------------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; 3.552 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.844      ;
+; 3.552 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.844      ;
+; 3.552 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.844      ;
+; 3.552 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.844      ;
+; 3.665 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.731      ;
+; 3.665 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.731      ;
+; 3.665 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.731      ;
+; 3.665 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.731      ;
+; 3.697 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.699      ;
+; 3.697 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.699      ;
+; 3.697 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.699      ;
+; 3.697 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.699      ;
+; 3.702 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.694      ;
+; 3.702 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.694      ;
+; 3.702 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.694      ;
+; 3.702 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.694      ;
+; 3.741 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30] ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.006     ; 8.724      ;
+; 3.741 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30] ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.006     ; 8.724      ;
+; 3.741 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30] ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.006     ; 8.724      ;
+; 3.741 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30] ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.006     ; 8.724      ;
+; 3.884 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[1]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.512      ;
+; 3.884 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[1]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.512      ;
+; 3.884 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[1]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.512      ;
+; 3.884 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[1]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.512      ;
+; 3.917 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[10] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.479      ;
+; 3.917 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[10] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.479      ;
+; 3.917 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[10] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.479      ;
+; 3.917 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[10] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.479      ;
+; 4.022 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[27] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.374      ;
+; 4.022 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[27] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.374      ;
+; 4.022 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[27] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.374      ;
+; 4.022 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[27] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.374      ;
+; 4.117 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[51] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.279      ;
+; 4.117 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[51] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.279      ;
+; 4.117 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[51] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.279      ;
+; 4.117 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[51] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.279      ;
+; 4.148 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[26] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.248      ;
+; 4.148 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[26] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.248      ;
+; 4.148 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[26] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.248      ;
+; 4.148 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[26] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.248      ;
+; 4.161 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[13] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.235      ;
+; 4.161 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[13] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.235      ;
+; 4.161 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[13] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.235      ;
+; 4.161 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[13] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.235      ;
+; 4.163 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[0]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.233      ;
+; 4.163 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[0]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.233      ;
+; 4.163 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[0]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.233      ;
+; 4.163 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[0]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.233      ;
+; 4.246 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[9]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.150      ;
+; 4.246 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[9]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.150      ;
+; 4.246 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[9]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.150      ;
+; 4.246 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[9]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.150      ;
+; 4.273 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[20] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.123      ;
+; 4.273 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[20] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.123      ;
+; 4.273 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[20] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.123      ;
+; 4.273 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[20] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.123      ;
+; 4.287 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[40] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.109      ;
+; 4.287 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[40] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.109      ;
+; 4.287 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[40] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.109      ;
+; 4.287 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[40] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.109      ;
+; 4.297 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[49] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.099      ;
+; 4.297 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[49] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.099      ;
+; 4.297 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[49] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.099      ;
+; 4.297 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[49] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.099      ;
+; 4.320 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[60] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.076      ;
+; 4.320 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[60] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.076      ;
+; 4.320 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[60] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.076      ;
+; 4.320 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[60] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.076      ;
+; 4.334 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[33] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.062      ;
+; 4.334 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[33] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.062      ;
+; 4.334 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[33] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.062      ;
+; 4.334 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[33] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.062      ;
+; 4.359 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[42] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.037      ;
+; 4.359 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[42] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.037      ;
+; 4.359 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[42] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.037      ;
+; 4.359 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[42] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.037      ;
+; 4.371 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[38] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.025      ;
+; 4.371 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[38] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.025      ;
+; 4.371 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[38] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.025      ;
+; 4.371 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[38] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 8.025      ;
+; 4.398 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[3]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.998      ;
+; 4.398 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[3]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.998      ;
+; 4.398 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[3]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.998      ;
+; 4.398 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[3]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.998      ;
+; 4.401 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[57] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.995      ;
+; 4.401 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[57] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.995      ;
+; 4.401 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[57] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.995      ;
+; 4.401 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[57] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.995      ;
+; 4.408 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[5]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.988      ;
+; 4.408 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[5]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.988      ;
+; 4.408 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[5]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.988      ;
+; 4.408 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[5]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.988      ;
+; 4.410 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30] ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|TSTAT    ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.006     ; 8.055      ;
+; 4.426 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[2]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.970      ;
+; 4.426 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[2]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.970      ;
+; 4.426 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[2]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.970      ;
+; 4.426 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[2]  ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.970      ;
+; 4.428 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[35] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|TSTAT    ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.968      ;
+; 4.436 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[55] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.960      ;
+; 4.436 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[55] ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1] ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 12.500       ; -0.075     ; 7.960      ;
++-------+--------------------------------------+------------------------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'CLK_40to80|altpll_component|pll|clk[0]'                                                                                                                                                                                                                                               ;
++-------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack ; From Node                                                                   ; To Node                                                                     ; Launch Clock                           ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; 0.644 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[84]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[85]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.656      ;
+; 0.648 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[12]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[13]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.660      ;
+; 0.663 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[76]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[77]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.675      ;
+; 0.663 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[60]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[61]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.675      ;
+; 0.666 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[60]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[61]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.678      ;
+; 0.666 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[40]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[41]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.678      ;
+; 0.667 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[35]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[36]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.679      ;
+; 0.667 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[51]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[52]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.679      ;
+; 0.667 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[3]                                         ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[4]                                         ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.679      ;
+; 0.667 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[44]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[45]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.679      ;
+; 0.668 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[80]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[81]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.680      ;
+; 0.668 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[7]                                         ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[8]                                         ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.680      ;
+; 0.668 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[39]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[40]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.680      ;
+; 0.668 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[23]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[24]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.680      ;
+; 0.669 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[7]                                         ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[8]                                         ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.681      ;
+; 0.669 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[16]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[17]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.681      ;
+; 0.670 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[64]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[65]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.682      ;
+; 0.670 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[30]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[31]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.682      ;
+; 0.670 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[71]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[72]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.682      ;
+; 0.670 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[32]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[33]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.682      ;
+; 0.671 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[74]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[75]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.683      ;
+; 0.671 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[70]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[71]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.683      ;
+; 0.672 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[69]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[70]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.684      ;
+; 0.673 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[58]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[59]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.685      ;
+; 0.673 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[28]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[29]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.685      ;
+; 0.673 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[58]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[59]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.685      ;
+; 0.674 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[0]                                         ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[1]                                         ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.686      ;
+; 0.675 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[26]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[27]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.687      ;
+; 0.676 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[73]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[74]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.688      ;
+; 0.676 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[36]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[37]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.688      ;
+; 0.677 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[78]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[79]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.689      ;
+; 0.679 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[50]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[51]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.691      ;
+; 0.679 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[16]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[17]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.691      ;
+; 0.680 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[52]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[53]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.692      ;
+; 0.683 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[76]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[77]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.695      ;
+; 0.684 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[39]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[40]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.696      ;
+; 0.684 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[20]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[21]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.696      ;
+; 0.685 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[55]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[56]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.697      ;
+; 0.794 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[20]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[21]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.806      ;
+; 0.803 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[82]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[83]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.815      ;
+; 0.804 ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|CHECK              ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|CHECK              ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.816      ;
+; 0.805 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[56]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[57]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.817      ;
+; 0.805 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[26]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[27]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.817      ;
+; 0.805 ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:0:WIDTH_SDSC|CHECK     ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:0:WIDTH_SDSC|CHECK     ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.817      ;
+; 0.806 ; FC_MODULE:ARM2_FC|SYNCHRONIZE:\GEN_SYC_FC:2:SYC_FC|OUTPUT                   ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|CHECK              ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.818      ;
+; 0.808 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[4]                                         ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[5]                                         ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.820      ;
+; 0.810 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[52]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[53]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.822      ;
+; 0.811 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[83]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[84]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.823      ;
+; 0.811 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[63]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[64]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.069      ; 0.892      ;
+; 0.811 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[78]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[79]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.823      ;
+; 0.813 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[12]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[13]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.825      ;
+; 0.814 ; FC_MODULE:ARM1_FC|SYNCHRONIZE:\GEN_SYC_FC:3:SYC_FC|OUTPUT                   ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|CHECK              ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.826      ;
+; 0.814 ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:11:WIDTH_SDSC|CHECK    ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:11:WIDTH_SDSC|CHECK    ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.826      ;
+; 0.817 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[66]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[67]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.829      ;
+; 0.818 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[48]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[49]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.830      ;
+; 0.818 ; SYC_WIDTH:A1_DSC_WIDTH|SYNCHRONIZE:\SYC_LDSC_GEN:2:SYC_LDSC|OUTPUT          ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:2:WIDTH_LDSC|CHECK     ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.830      ;
+; 0.818 ; SYC_WIDTH:A2_DSC_WIDTH|SYNCHRONIZE:\SYC_LDSC_GEN:11:SYC_LDSC|OUTPUT         ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:11:WIDTH_LDSC|CHECK    ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.830      ;
+; 0.822 ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3]                        ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3]                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.834      ;
+; 0.823 ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|TSTAT                           ; FC_MODULE:ARM2_FC|INTERNALCOUNTER:FC2_WIDTH|TENDMARK                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.835      ;
+; 0.824 ; SYC_WIDTH:A1_DSC_WIDTH|SYNCHRONIZE:\SYC_LDSC_GEN:6:SYC_LDSC|OUTPUT          ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:6:WIDTH_LDSC|CHECK     ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.836      ;
+; 0.825 ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:15:WIDTH_LDSC|TENDMARK ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:15:WIDTH_LDSC|TENDMARK ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.837      ;
+; 0.825 ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:3:WIDTH_LDSC|TENDMARK  ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:3:WIDTH_LDSC|CHECK     ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.837      ;
+; 0.826 ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:9:WIDTH_LDSC|TENDMARK  ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:9:WIDTH_LDSC|TENDMARK  ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.838      ;
+; 0.829 ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:0:WIDTH_LDSC|CHECK     ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:0:WIDTH_LDSC|CHECK     ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.841      ;
+; 0.830 ; SYC_WIDTH:A1_DSC_WIDTH|SYNCHRONIZE:\Syc_SDSC_GEN:4:SYC_SDSC|OUTPUT          ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:4:WIDTH_SDSC|TSTAT     ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.842      ;
+; 0.830 ; SYC_WIDTH:A2_DSC_WIDTH|SYNCHRONIZE:\SYC_LDSC_GEN:1:SYC_LDSC|OUTPUT          ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:1:WIDTH_LDSC|TSTAT     ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.842      ;
+; 0.830 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[64]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[65]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.842      ;
+; 0.831 ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:9:WIDTH_LDSC|TENDMARK  ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:9:WIDTH_LDSC|TSTAT     ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.843      ;
+; 0.832 ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|TENDMARK           ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|TENDMARK           ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.844      ;
+; 0.832 ; SYC_WIDTH:A2_DSC_WIDTH|SYNCHRONIZE:\SYC_LDSC_GEN:12:SYC_LDSC|OUTPUT         ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:12:WIDTH_LDSC|CHECK    ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.844      ;
+; 0.833 ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|TENDMARK           ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|TSTAT              ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.845      ;
+; 0.833 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[6]                                         ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[7]                                         ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.845      ;
+; 0.833 ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|TENDMARK           ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|CHECK              ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.845      ;
+; 0.834 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[79]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[80]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.846      ;
+; 0.836 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:1:WIDTH_LDSC|TENDMARK  ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:1:WIDTH_LDSC|TENDMARK  ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.848      ;
+; 0.837 ; SYC_WIDTH:A1_DSC_WIDTH|SYNCHRONIZE:\Syc_SDSC_GEN:15:SYC_SDSC|OUTPUT         ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:15:WIDTH_SDSC|CHECK    ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.849      ;
+; 0.838 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:0:WIDTH_LDSC|TENDMARK  ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:0:WIDTH_LDSC|TSTAT     ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.850      ;
+; 0.838 ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:5:WIDTH_LDSC|CHECK     ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:5:WIDTH_LDSC|CHECK     ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.850      ;
+; 0.839 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[19]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[20]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.851      ;
+; 0.840 ; SYC_WIDTH:A1_DSC_WIDTH|SYNCHRONIZE:\SYC_LDSC_GEN:12:SYC_LDSC|OUTPUT         ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:12:WIDTH_LDSC|CHECK    ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.852      ;
+; 0.840 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:10:WIDTH_SDSC|CHECK    ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:10:WIDTH_SDSC|CHECK    ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.852      ;
+; 0.841 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:13:WIDTH_LDSC|TENDMARK ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:13:WIDTH_LDSC|TSTAT    ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.853      ;
+; 0.841 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:13:WIDTH_LDSC|TENDMARK ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:13:WIDTH_LDSC|TENDMARK ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.853      ;
+; 0.841 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:1:WIDTH_LDSC|TENDMARK  ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:1:WIDTH_LDSC|CHECK     ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.853      ;
+; 0.841 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:5:WIDTH_LDSC|TSTAT     ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:5:WIDTH_LDSC|CHECK     ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.853      ;
+; 0.842 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:0:WIDTH_LDSC|TENDMARK  ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:0:WIDTH_LDSC|CHECK     ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.854      ;
+; 0.842 ; SYC_WIDTH:A2_DSC_WIDTH|SYNCHRONIZE:\SYC_LDSC_GEN:15:SYC_LDSC|OUTPUT         ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:15:WIDTH_LDSC|CHECK    ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.854      ;
+; 0.844 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:13:WIDTH_LDSC|TENDMARK ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:13:WIDTH_LDSC|CHECK    ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.856      ;
+; 0.845 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:7:WIDTH_SDSC|TENDMARK  ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:7:WIDTH_SDSC|CHECK     ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.857      ;
+; 0.846 ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:5:WIDTH_LDSC|TSTAT     ; SYC_WIDTH:A2_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:5:WIDTH_LDSC|TENDMARK  ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.858      ;
+; 0.846 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[8]                                         ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[9]                                         ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.858      ;
+; 0.847 ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:2:WIDTH_SDSC|TENDMARK  ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:2:WIDTH_SDSC|TSTAT     ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.859      ;
+; 0.848 ; SYC_WIDTH:A1_DSC_WIDTH|SYNCHRONIZE:\Syc_SDSC_GEN:4:SYC_SDSC|OUTPUT          ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:4:WIDTH_SDSC|CHECK     ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.860      ;
+; 0.849 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[4]                                         ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[5]                                         ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.861      ;
+; 0.850 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[0]                                         ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[1]                                         ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.862      ;
+; 0.850 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[43]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[44]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.862      ;
+; 0.851 ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[45]                                        ; LINEDELAY:LDELAYBPTX2|DELAY_LINE[46]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.863      ;
+; 0.851 ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[42]                                        ; LINEDELAY:LDELAYBPTX1|DELAY_LINE[43]                                        ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.863      ;
+; 0.851 ; SYC_WIDTH:A1_DSC_WIDTH|SYNCHRONIZE:\SYC_LDSC_GEN:11:SYC_LDSC|OUTPUT         ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\SYC_LDSC_GEN:11:WIDTH_LDSC|CHECK    ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.863      ;
+; 0.853 ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:14:WIDTH_SDSC|TSTAT    ; SYC_WIDTH:A1_DSC_WIDTH|INTERNALCOUNTER:\Syc_SDSC_GEN:14:WIDTH_SDSC|TSTAT    ; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.865      ;
++-------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'CLK_40to80|altpll_component|pll|clk[1]'                                                                                                                                                                                             ;
++-------+----------------------------------------------------+----------------------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack ; From Node                                          ; To Node                                            ; Launch Clock                           ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------+----------------------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; 0.804 ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|COUNT[3]   ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|COUNT[3]   ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.816      ;
+; 0.811 ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[3]          ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[3]          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.823      ;
+; 0.826 ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|TSTAT             ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|TSTAT             ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.838      ;
+; 0.826 ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|TSTAT          ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|CHECK          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.838      ;
+; 0.827 ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|TSTAT             ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|CHECK             ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.839      ;
+; 0.828 ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|TENDMARK ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|TENDMARK ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.840      ;
+; 0.830 ; CLKMHZ:L_CLK1MHz|COUNT[5]                          ; CLKMHZ:L_CLK1MHz|COUNT[5]                          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.842      ;
+; 0.830 ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_LOGIC|COUNT[3] ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_LOGIC|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.842      ;
+; 0.831 ; INTERNALCOUNTER:WIDHT_OUT_BPTX2|COUNT[3]           ; INTERNALCOUNTER:WIDHT_OUT_BPTX2|COUNT[3]           ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.843      ;
+; 0.832 ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_LOGIC|TENDMARK ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_LOGIC|TENDMARK ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.844      ;
+; 0.834 ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|COUNT[3]       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|COUNT[3]       ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.846      ;
+; 0.834 ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|COUNT[3]       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|COUNT[3]       ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.846      ;
+; 0.834 ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_LOGIC|TENDMARK ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_LOGIC|TSTAT    ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.846      ;
+; 0.835 ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|COUNT[3]       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|TENDMARK       ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.847      ;
+; 0.835 ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|COUNT[3]       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|TENDMARK       ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.847      ;
+; 0.838 ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_LOGIC|TENDMARK ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_LOGIC|CHECK    ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.850      ;
+; 0.844 ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|TENDMARK       ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|TENDMARK       ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.856      ;
+; 0.848 ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|TENDMARK       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|TENDMARK       ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.860      ;
+; 0.848 ; INTERNALCOUNTER:BPTX2_WIDTH|TENDMARK               ; INTERNALCOUNTER:BPTX2_WIDTH|TENDMARK               ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.860      ;
+; 0.850 ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|TENDMARK       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|TSTAT          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.862      ;
+; 0.850 ; INTERNALCOUNTER:BPTX1_WIDTH|TENDMARK               ; INTERNALCOUNTER:BPTX1_WIDTH|TENDMARK               ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.862      ;
+; 0.850 ; INTERNALCOUNTER:BPTX2_WIDTH|TENDMARK               ; INTERNALCOUNTER:BPTX2_WIDTH|TSTAT                  ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.862      ;
+; 0.851 ; INTERNALCOUNTER:BPTX1_WIDTH|TENDMARK               ; INTERNALCOUNTER:BPTX1_WIDTH|TSTAT                  ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.863      ;
+; 0.853 ; INTERNALCOUNTER:BPTX1_WIDTH|TENDMARK               ; INTERNALCOUNTER:BPTX1_WIDTH|CHECK                  ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.865      ;
+; 0.854 ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|TENDMARK       ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|TSTAT          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.866      ;
+; 0.854 ; INTERNALCOUNTER:BPTX2_WIDTH|TENDMARK               ; INTERNALCOUNTER:BPTX2_WIDTH|CHECK                  ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.866      ;
+; 0.865 ; INTERNALCOUNTER:WIDHT_OUT_BPTX1|TENDMARK           ; INTERNALCOUNTER:WIDHT_OUT_BPTX1|TENDMARK           ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.877      ;
+; 0.866 ; INTERNALCOUNTER:WIDHT_OUT_FCL_OR|TENDMARK          ; INTERNALCOUNTER:WIDHT_OUT_FCL_OR|TENDMARK          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.878      ;
+; 0.866 ; INTERNALCOUNTER:WIDHT_OUT_FC_AND|TENDMARK          ; INTERNALCOUNTER:WIDHT_OUT_FC_AND|TENDMARK          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.878      ;
+; 0.868 ; INTERNALCOUNTER:WIDHT_OUT_BPTX1|TENDMARK           ; INTERNALCOUNTER:WIDHT_OUT_BPTX1|TSTAT              ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.880      ;
+; 0.868 ; INTERNALCOUNTER:WIDHT_OUT_BPTX1|TENDMARK           ; INTERNALCOUNTER:WIDHT_OUT_BPTX1|CHECK              ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.880      ;
+; 0.868 ; INTERNALCOUNTER:WIDHT_OUT_FCL_OR|TENDMARK          ; INTERNALCOUNTER:WIDHT_OUT_FCL_OR|CHECK             ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.880      ;
+; 0.868 ; INTERNALCOUNTER:WIDHT_OUT_FC_AND|TENDMARK          ; INTERNALCOUNTER:WIDHT_OUT_FC_AND|CHECK             ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.880      ;
+; 0.869 ; INTERNALCOUNTER:WIDHT_OUT_FCL_OR|TENDMARK          ; INTERNALCOUNTER:WIDHT_OUT_FCL_OR|TSTAT             ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.881      ;
+; 0.869 ; INTERNALCOUNTER:WIDHT_OUT_FC_AND|TENDMARK          ; INTERNALCOUNTER:WIDHT_OUT_FC_AND|TSTAT             ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.881      ;
+; 0.869 ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|TSTAT          ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|CHECK          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.881      ;
+; 0.946 ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|CHECK    ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|CHECK    ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.958      ;
+; 0.963 ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|COUNT[3] ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|TENDMARK ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.975      ;
+; 0.963 ; INTERNALCOUNTER:BPTX1_WIDTH|CHECK                  ; INTERNALCOUNTER:BPTX1_WIDTH|CHECK                  ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.975      ;
+; 0.963 ; INTERNALCOUNTER:BPTX2_WIDTH|CHECK                  ; INTERNALCOUNTER:BPTX2_WIDTH|CHECK                  ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.975      ;
+; 0.964 ; INTERNALCOUNTER:BPTX1_WIDTH|CHECK                  ; INTERNALCOUNTER:BPTX1_WIDTH|TSTAT                  ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.976      ;
+; 0.966 ; INTERNALCOUNTER:BPTX2_WIDTH|CHECK                  ; INTERNALCOUNTER:BPTX2_WIDTH|TSTAT                  ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.978      ;
+; 0.967 ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|COUNT[3]       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|TENDMARK       ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.979      ;
+; 0.967 ; INTERNALCOUNTER:BPTX2_WIDTH|TSTAT                  ; INTERNALCOUNTER:BPTX2_WIDTH|TENDMARK               ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.979      ;
+; 0.968 ; INTERNALCOUNTER:BPTX1_WIDTH|TSTAT                  ; INTERNALCOUNTER:BPTX1_WIDTH|TENDMARK               ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.980      ;
+; 0.970 ; INTERNALCOUNTER:WIDHT_OUT_FCL_OR|COUNT[2]          ; INTERNALCOUNTER:WIDHT_OUT_FCL_OR|TENDMARK          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.982      ;
+; 0.970 ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|CHECK          ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|CHECK          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.982      ;
+; 0.974 ; INTERNALCOUNTER:WIDHT_OUT_BPTX1|COUNT[3]           ; INTERNALCOUNTER:WIDHT_OUT_BPTX1|TENDMARK           ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.986      ;
+; 0.974 ; INTERNALCOUNTER:WIDHT_OUT_FC_AND|COUNT[2]          ; INTERNALCOUNTER:WIDHT_OUT_FC_AND|TENDMARK          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.986      ;
+; 0.974 ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|TSTAT      ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|TSTAT      ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.986      ;
+; 0.975 ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|TENDMARK   ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|CHECK      ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.987      ;
+; 0.976 ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|TSTAT      ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|TSTAT      ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.988      ;
+; 0.981 ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|TENDMARK       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|TSTAT          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.993      ;
+; 0.981 ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|TENDMARK       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|TSTAT          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 0.993      ;
+; 0.989 ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|CHECK          ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|CHECK          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.001      ;
+; 0.989 ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|CHECK          ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|CHECK          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.001      ;
+; 0.997 ; INTERNALCOUNTER:WIDHT_OUT_BPTX2|TENDMARK           ; INTERNALCOUNTER:WIDHT_OUT_BPTX2|TSTAT              ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.009      ;
+; 1.006 ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|TSTAT          ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|TENDMARK       ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.018      ;
+; 1.006 ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|TSTAT          ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|TENDMARK       ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.018      ;
+; 1.011 ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[3]   ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[3]   ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.023      ;
+; 1.011 ; INTERNALCOUNTER:WIDHT_OUT_BPTX2|TSTAT              ; INTERNALCOUNTER:WIDHT_OUT_BPTX2|CHECK              ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.023      ;
+; 1.012 ; INTERNALCOUNTER:WIDHT_OUT_BPTX2|TSTAT              ; INTERNALCOUNTER:WIDHT_OUT_BPTX2|TENDMARK           ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.024      ;
+; 1.018 ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|COUNT[0]   ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|COUNT[0]   ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.030      ;
+; 1.021 ; SYNCHRONIZE:SYC_BPTX2|OUTPUT                       ; INTERNALCOUNTER:BPTX2_WIDTH|CHECK                  ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.033      ;
+; 1.023 ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[0]          ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|COUNT[0]          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.035      ;
+; 1.024 ; SYNCHRONIZE:SYC_BPTX2|OUTPUT                       ; INTERNALCOUNTER:BPTX2_WIDTH|TSTAT                  ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.036      ;
+; 1.026 ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|COUNT[0]       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|COUNT[0]       ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.038      ;
+; 1.026 ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|COUNT[0]       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|COUNT[0]       ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.038      ;
+; 1.028 ; INTERNALCOUNTER:WIDHT_OUT_BPTX2|COUNT[0]           ; INTERNALCOUNTER:WIDHT_OUT_BPTX2|COUNT[0]           ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.040      ;
+; 1.030 ; CLKMHZ:L_CLK1MHz|COUNT[4]                          ; CLKMHZ:L_CLK1MHz|COUNT[4]                          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.042      ;
+; 1.030 ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|COUNT[3] ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|COUNT[3] ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.042      ;
+; 1.032 ; CLKMHZ:L_CLK1MHz|COUNT[3]                          ; CLKMHZ:L_CLK1MHz|COUNT[3]                          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.044      ;
+; 1.033 ; INTERNALCOUNTER:WIDHT_OUT_BPTX2|CHECK              ; INTERNALCOUNTER:WIDHT_OUT_BPTX2|CHECK              ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.045      ;
+; 1.034 ; CLKMHZ:L_CLK1MHz|COUNT[2]                          ; CLKMHZ:L_CLK1MHz|COUNT[2]                          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.046      ;
+; 1.034 ; CLKMHZ:L_CLK1MHz|TOUT                              ; CLKMHZ:L_CLK1MHz|TOUT                              ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.046      ;
+; 1.035 ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[2]   ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_TRG|COUNT[2]   ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.047      ;
+; 1.036 ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|COUNT[3]       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|COUNT[3]       ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.048      ;
+; 1.038 ; INTERNALCOUNTER:WIDHT_OUT_FCL_OR|COUNT[2]          ; INTERNALCOUNTER:WIDHT_OUT_FCL_OR|COUNT[2]          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.050      ;
+; 1.040 ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[2]       ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[2]       ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.052      ;
+; 1.040 ; SYNCHRONIZE:SYC_BPTX1|OUTPUT                       ; INTERNALCOUNTER:BPTX1_WIDTH|CHECK                  ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.052      ;
+; 1.042 ; INTERNALCOUNTER:WIDHT_OUT_BPTX1|COUNT[3]           ; INTERNALCOUNTER:WIDHT_OUT_BPTX1|COUNT[3]           ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.054      ;
+; 1.042 ; SYNCHRONIZE:SYC_BPTX1|OUTPUT                       ; INTERNALCOUNTER:BPTX1_WIDTH|TSTAT                  ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.054      ;
+; 1.043 ; INTERNALCOUNTER:WIDHT_OUT_FC_AND|COUNT[2]          ; INTERNALCOUNTER:WIDHT_OUT_FC_AND|COUNT[2]          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.055      ;
+; 1.045 ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|COUNT[2] ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|COUNT[2] ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.057      ;
+; 1.045 ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|TENDMARK ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|TSTAT    ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.057      ;
+; 1.047 ; INTERNALCOUNTER:WIDHT_OUT_BPTX2|COUNT[3]           ; INTERNALCOUNTER:WIDHT_OUT_BPTX2|TENDMARK           ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.059      ;
+; 1.047 ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|TENDMARK          ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|TENDMARK          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.059      ;
+; 1.048 ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|TENDMARK          ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|CHECK             ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.060      ;
+; 1.048 ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|TENDMARK ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|CHECK    ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.060      ;
+; 1.049 ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_LOGIC|COUNT[3] ; INTERNALCOUNTER:WIDHT_OUT_A2_SHOWER_LOGIC|TENDMARK ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.061      ;
+; 1.049 ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|COUNT[2] ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|TENDMARK ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.061      ;
+; 1.051 ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|TENDMARK       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|TENDMARK       ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.063      ;
+; 1.051 ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|TENDMARK       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|TENDMARK       ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.063      ;
+; 1.051 ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|TENDMARK          ; INTERNALCOUNTER:WIDHT_OUT_FC_TRG|TSTAT             ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.063      ;
+; 1.052 ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|TENDMARK       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|CHECK          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.064      ;
+; 1.052 ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|TENDMARK       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|CHECK          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.064      ;
+; 1.065 ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|TENDMARK       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|CHECK          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.077      ;
+; 1.068 ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|TENDMARK       ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|CHECK          ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.080      ;
+; 1.076 ; INTERNALCOUNTER:WIDHT_OUT_FC_AND|TSTAT             ; INTERNALCOUNTER:WIDHT_OUT_FC_AND|TSTAT             ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.088      ;
+; 1.077 ; INTERNALCOUNTER:WIDHT_OUT_FCL_OR|TSTAT             ; INTERNALCOUNTER:WIDHT_OUT_FCL_OR|TSTAT             ; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 0.000        ; 0.000      ; 1.089      ;
++-------+----------------------------------------------------+----------------------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'CLK_40to80|altpll_component|pll|clk[0]'                                                                                                                      ;
++-------+--------------+----------------+------------------+----------------------------------------+------------+-------------------------------------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                                  ; Clock Edge ; Target                                                            ;
++-------+--------------+----------------+------------------+----------------------------------------+------------+-------------------------------------------------------------------+
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|CHECK                 ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|CHECK                 ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0]              ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[0]              ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1]              ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[1]              ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2]              ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[2]              ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3]              ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|COUNT[3]              ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|TENDMARK              ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|TENDMARK              ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|TSTAT                 ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:FC2_WIDTH|TSTAT                 ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|CHECK    ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|CHECK    ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|COUNT[0] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|COUNT[0] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|COUNT[1] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|COUNT[1] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|COUNT[2] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|COUNT[2] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|COUNT[3] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|COUNT[3] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|COUNT[4] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|COUNT[4] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|COUNT[5] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|COUNT[5] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|COUNT[6] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|COUNT[6] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|COUNT[7] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|COUNT[7] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|TENDMARK ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|TENDMARK ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|TSTAT    ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:0:WIDTH_FC|TSTAT    ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|CHECK    ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|CHECK    ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|COUNT[0] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|COUNT[0] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|COUNT[1] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|COUNT[1] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|COUNT[2] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|COUNT[2] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|COUNT[3] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|COUNT[3] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|COUNT[4] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|COUNT[4] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|COUNT[5] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|COUNT[5] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|COUNT[6] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|COUNT[6] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|COUNT[7] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|COUNT[7] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|TENDMARK ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|TENDMARK ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|TSTAT    ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:1:WIDTH_FC|TSTAT    ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|CHECK    ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|CHECK    ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|COUNT[0] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|COUNT[0] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|COUNT[1] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|COUNT[1] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|COUNT[2] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|COUNT[2] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|COUNT[3] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|COUNT[3] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|COUNT[4] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|COUNT[4] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|COUNT[5] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|COUNT[5] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|COUNT[6] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|COUNT[6] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|COUNT[7] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|COUNT[7] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|TENDMARK ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|TENDMARK ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|TSTAT    ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:2:WIDTH_FC|TSTAT    ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|CHECK    ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|CHECK    ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|COUNT[0] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|COUNT[0] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|COUNT[1] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|COUNT[1] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|COUNT[2] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|COUNT[2] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|COUNT[3] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|COUNT[3] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|COUNT[4] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|COUNT[4] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|COUNT[5] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|COUNT[5] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|COUNT[6] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|COUNT[6] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|COUNT[7] ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|COUNT[7] ;
+; 5.016 ; 6.250        ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|TENDMARK ;
+; 5.016 ; 6.250        ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[0] ; Rise       ; FC_MODULE:ARM1_FC|INTERNALCOUNTER:\GEN_SYC_FC:3:WIDTH_FC|TENDMARK ;
++-------+--------------+----------------+------------------+----------------------------------------+------------+-------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'CLK_40to80|altpll_component|pll|clk[1]'                                                                                                        ;
++--------+--------------+----------------+------------------+----------------------------------------+------------+----------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                                  ; Clock Edge ; Target                                             ;
++--------+--------------+----------------+------------------+----------------------------------------+------------+----------------------------------------------------+
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; CLKMHZ:L_CLK1MHz|COUNT[0]                          ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; CLKMHZ:L_CLK1MHz|COUNT[0]                          ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; CLKMHZ:L_CLK1MHz|COUNT[1]                          ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; CLKMHZ:L_CLK1MHz|COUNT[1]                          ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; CLKMHZ:L_CLK1MHz|COUNT[2]                          ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; CLKMHZ:L_CLK1MHz|COUNT[2]                          ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; CLKMHZ:L_CLK1MHz|COUNT[3]                          ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; CLKMHZ:L_CLK1MHz|COUNT[3]                          ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; CLKMHZ:L_CLK1MHz|COUNT[4]                          ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; CLKMHZ:L_CLK1MHz|COUNT[4]                          ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; CLKMHZ:L_CLK1MHz|COUNT[5]                          ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; CLKMHZ:L_CLK1MHz|COUNT[5]                          ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; CLKMHZ:L_CLK1MHz|TOUT                              ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; CLKMHZ:L_CLK1MHz|TOUT                              ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:BPTX1_WIDTH|CHECK                  ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:BPTX1_WIDTH|CHECK                  ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:BPTX1_WIDTH|TENDMARK               ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:BPTX1_WIDTH|TENDMARK               ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:BPTX1_WIDTH|TSTAT                  ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:BPTX1_WIDTH|TSTAT                  ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:BPTX2_WIDTH|CHECK                  ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:BPTX2_WIDTH|CHECK                  ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:BPTX2_WIDTH|TENDMARK               ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:BPTX2_WIDTH|TENDMARK               ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:BPTX2_WIDTH|TSTAT                  ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:BPTX2_WIDTH|TSTAT                  ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|CHECK          ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|CHECK          ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|COUNT[0]       ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|COUNT[0]       ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|COUNT[1]       ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|COUNT[1]       ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|COUNT[2]       ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|COUNT[2]       ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|COUNT[3]       ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|COUNT[3]       ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|TENDMARK       ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|TENDMARK       ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|TSTAT          ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FCL_OR|TSTAT          ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|CHECK          ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|CHECK          ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|COUNT[0]       ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|COUNT[0]       ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|COUNT[1]       ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|COUNT[1]       ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|COUNT[2]       ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|COUNT[2]       ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|COUNT[3]       ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|COUNT[3]       ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|TENDMARK       ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|TENDMARK       ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|TSTAT          ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_FC_TRG|TSTAT          ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|CHECK    ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|CHECK    ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|COUNT[0] ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|COUNT[0] ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|COUNT[1] ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|COUNT[1] ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|COUNT[2] ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|COUNT[2] ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|COUNT[3] ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|COUNT[3] ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|TENDMARK ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|TENDMARK ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|TSTAT    ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_LOGIC|TSTAT    ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|CHECK      ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|CHECK      ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|COUNT[0]   ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|COUNT[0]   ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|COUNT[1]   ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|COUNT[1]   ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|COUNT[2]   ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|COUNT[2]   ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|COUNT[3]   ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|COUNT[3]   ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|TENDMARK   ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|TENDMARK   ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|TSTAT      ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A1_SHOWER_TRG|TSTAT      ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|CHECK          ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|CHECK          ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|COUNT[0]       ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|COUNT[0]       ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|COUNT[1]       ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|COUNT[1]       ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|COUNT[2]       ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|COUNT[2]       ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|COUNT[3]       ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|COUNT[3]       ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|TENDMARK       ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|TENDMARK       ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|TSTAT          ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FCL_OR|TSTAT          ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|CHECK          ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|CHECK          ;
+; 11.266 ; 12.500       ; 1.234          ; High Pulse Width ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[0]       ;
+; 11.266 ; 12.500       ; 1.234          ; Low Pulse Width  ; CLK_40to80|altpll_component|pll|clk[1] ; Rise       ; INTERNALCOUNTER:WIDHT_OUT_A2_FC_TRG|COUNT[0]       ;
++--------+--------------+----------------+------------------+----------------------------------------+------------+----------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'LHCCLK'                                                                                              ;
++--------+--------------+----------------+------------------+--------+------------+------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                                   ;
++--------+--------------+----------------+------------------+--------+------------+------------------------------------------+
+; 12.500 ; 12.500       ; 0.000          ; High Pulse Width ; LHCCLK ; Rise       ; CLK_40to80|altpll_component|pll|clk[0]   ;
+; 12.500 ; 12.500       ; 0.000          ; Low Pulse Width  ; LHCCLK ; Rise       ; CLK_40to80|altpll_component|pll|clk[0]   ;
+; 12.500 ; 12.500       ; 0.000          ; High Pulse Width ; LHCCLK ; Rise       ; CLK_40to80|altpll_component|pll|clk[1]   ;
+; 12.500 ; 12.500       ; 0.000          ; Low Pulse Width  ; LHCCLK ; Rise       ; CLK_40to80|altpll_component|pll|clk[1]   ;
+; 12.500 ; 12.500       ; 0.000          ; High Pulse Width ; LHCCLK ; Rise       ; CLK_40to80|altpll_component|pll|inclk[0] ;
+; 12.500 ; 12.500       ; 0.000          ; Low Pulse Width  ; LHCCLK ; Rise       ; CLK_40to80|altpll_component|pll|inclk[0] ;
+; 12.500 ; 12.500       ; 0.000          ; High Pulse Width ; LHCCLK ; Rise       ; GIN[0]|combout                           ;
+; 12.500 ; 12.500       ; 0.000          ; Low Pulse Width  ; LHCCLK ; Rise       ; GIN[0]|combout                           ;
+; 22.845 ; 25.000       ; 2.155          ; Port Rate        ; LHCCLK ; Rise       ; GIN[0]                                   ;
++--------+--------------+----------------+------------------+--------+------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Setup Times                                                                                  ;
++-----------+------------+-------+-------+------------+----------------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                        ;
++-----------+------------+-------+-------+------------+----------------------------------------+
+; A[*]      ; LHCCLK     ; 9.419 ; 9.419 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[0]     ; LHCCLK     ; 7.486 ; 7.486 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[1]     ; LHCCLK     ; 5.739 ; 5.739 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[2]     ; LHCCLK     ; 6.068 ; 6.068 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[3]     ; LHCCLK     ; 5.481 ; 5.481 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[4]     ; LHCCLK     ; 5.877 ; 5.877 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[5]     ; LHCCLK     ; 6.981 ; 6.981 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[6]     ; LHCCLK     ; 5.481 ; 5.481 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[7]     ; LHCCLK     ; 6.013 ; 6.013 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[8]     ; LHCCLK     ; 7.612 ; 7.612 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[9]     ; LHCCLK     ; 7.677 ; 7.677 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[10]    ; LHCCLK     ; 6.201 ; 6.201 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[11]    ; LHCCLK     ; 5.157 ; 5.157 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[12]    ; LHCCLK     ; 5.145 ; 5.145 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[13]    ; LHCCLK     ; 5.247 ; 5.247 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[14]    ; LHCCLK     ; 5.817 ; 5.817 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[15]    ; LHCCLK     ; 5.514 ; 5.514 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[16]    ; LHCCLK     ; 7.884 ; 7.884 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[17]    ; LHCCLK     ; 5.253 ; 5.253 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[18]    ; LHCCLK     ; 7.789 ; 7.789 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[19]    ; LHCCLK     ; 5.347 ; 5.347 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[20]    ; LHCCLK     ; 6.342 ; 6.342 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[21]    ; LHCCLK     ; 5.125 ; 5.125 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[22]    ; LHCCLK     ; 9.419 ; 9.419 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[23]    ; LHCCLK     ; 6.886 ; 6.886 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[24]    ; LHCCLK     ; 6.876 ; 6.876 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[25]    ; LHCCLK     ; 6.840 ; 6.840 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[26]    ; LHCCLK     ; 7.491 ; 7.491 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[27]    ; LHCCLK     ; 6.276 ; 6.276 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[28]    ; LHCCLK     ; 6.701 ; 6.701 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[29]    ; LHCCLK     ; 6.217 ; 6.217 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[30]    ; LHCCLK     ; 7.470 ; 7.470 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[31]    ; LHCCLK     ; 6.977 ; 6.977 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+; B[*]      ; LHCCLK     ; 7.557 ; 7.557 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[0]     ; LHCCLK     ; 5.316 ; 5.316 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[1]     ; LHCCLK     ; 5.556 ; 5.556 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[2]     ; LHCCLK     ; 5.480 ; 5.480 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[3]     ; LHCCLK     ; 4.825 ; 4.825 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[4]     ; LHCCLK     ; 4.825 ; 4.825 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[5]     ; LHCCLK     ; 5.124 ; 5.124 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[6]     ; LHCCLK     ; 5.886 ; 5.886 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[7]     ; LHCCLK     ; 7.453 ; 7.453 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[8]     ; LHCCLK     ; 7.557 ; 7.557 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[9]     ; LHCCLK     ; 5.227 ; 5.227 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[10]    ; LHCCLK     ; 5.238 ; 5.238 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[11]    ; LHCCLK     ; 6.530 ; 6.530 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[12]    ; LHCCLK     ; 4.756 ; 4.756 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[13]    ; LHCCLK     ; 5.971 ; 5.971 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[14]    ; LHCCLK     ; 5.871 ; 5.871 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[15]    ; LHCCLK     ; 6.532 ; 6.532 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[16]    ; LHCCLK     ; 5.322 ; 5.322 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[17]    ; LHCCLK     ; 7.554 ; 7.554 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[18]    ; LHCCLK     ; 5.702 ; 5.702 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[19]    ; LHCCLK     ; 5.681 ; 5.681 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[20]    ; LHCCLK     ; 5.822 ; 5.822 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[21]    ; LHCCLK     ; 5.859 ; 5.859 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[22]    ; LHCCLK     ; 6.623 ; 6.623 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[23]    ; LHCCLK     ; 6.954 ; 6.954 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[24]    ; LHCCLK     ; 6.417 ; 6.417 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[25]    ; LHCCLK     ; 6.077 ; 6.077 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[26]    ; LHCCLK     ; 6.074 ; 6.074 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[27]    ; LHCCLK     ; 5.799 ; 5.799 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[28]    ; LHCCLK     ; 5.078 ; 5.078 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[29]    ; LHCCLK     ; 5.273 ; 5.273 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[30]    ; LHCCLK     ; 5.585 ; 5.585 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[31]    ; LHCCLK     ; 5.599 ; 5.599 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+; D[*]      ; LHCCLK     ; 7.833 ; 7.833 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  D[0]     ; LHCCLK     ; 7.261 ; 7.261 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  D[1]     ; LHCCLK     ; 7.223 ; 7.223 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  D[2]     ; LHCCLK     ; 7.020 ; 7.020 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  D[3]     ; LHCCLK     ; 6.545 ; 6.545 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  D[4]     ; LHCCLK     ; 7.119 ; 7.119 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  D[5]     ; LHCCLK     ; 6.663 ; 6.663 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  D[6]     ; LHCCLK     ; 7.833 ; 7.833 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  D[7]     ; LHCCLK     ; 7.761 ; 7.761 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+; IDD[*]    ; LHCCLK     ; 9.682 ; 9.682 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  IDD[0]   ; LHCCLK     ; 8.438 ; 8.438 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  IDD[1]   ; LHCCLK     ; 9.682 ; 9.682 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  IDD[2]   ; LHCCLK     ; 8.480 ; 8.480 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+; E[*]      ; LHCCLK     ; 9.142 ; 9.142 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  E[2]     ; LHCCLK     ; 9.142 ; 9.142 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  E[18]    ; LHCCLK     ; 8.188 ; 8.188 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+; IDE[*]    ; LHCCLK     ; 9.089 ; 9.089 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  IDE[0]   ; LHCCLK     ; 7.914 ; 7.914 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  IDE[1]   ; LHCCLK     ; 8.600 ; 8.600 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  IDE[2]   ; LHCCLK     ; 9.089 ; 9.089 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
++-----------+------------+-------+-------+------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                     ;
++-----------+------------+--------+--------+------------+----------------------------------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                        ;
++-----------+------------+--------+--------+------------+----------------------------------------+
+; A[*]      ; LHCCLK     ; -5.084 ; -5.084 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[0]     ; LHCCLK     ; -7.445 ; -7.445 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[1]     ; LHCCLK     ; -5.698 ; -5.698 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[2]     ; LHCCLK     ; -6.027 ; -6.027 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[3]     ; LHCCLK     ; -5.440 ; -5.440 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[4]     ; LHCCLK     ; -5.836 ; -5.836 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[5]     ; LHCCLK     ; -6.940 ; -6.940 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[6]     ; LHCCLK     ; -5.440 ; -5.440 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[7]     ; LHCCLK     ; -5.972 ; -5.972 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[8]     ; LHCCLK     ; -7.571 ; -7.571 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[9]     ; LHCCLK     ; -7.636 ; -7.636 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[10]    ; LHCCLK     ; -6.160 ; -6.160 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[11]    ; LHCCLK     ; -5.116 ; -5.116 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[12]    ; LHCCLK     ; -5.104 ; -5.104 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[13]    ; LHCCLK     ; -5.206 ; -5.206 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[14]    ; LHCCLK     ; -5.776 ; -5.776 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[15]    ; LHCCLK     ; -5.473 ; -5.473 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[16]    ; LHCCLK     ; -7.843 ; -7.843 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[17]    ; LHCCLK     ; -5.212 ; -5.212 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[18]    ; LHCCLK     ; -7.748 ; -7.748 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[19]    ; LHCCLK     ; -5.306 ; -5.306 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[20]    ; LHCCLK     ; -6.301 ; -6.301 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[21]    ; LHCCLK     ; -5.084 ; -5.084 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[22]    ; LHCCLK     ; -9.378 ; -9.378 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[23]    ; LHCCLK     ; -6.845 ; -6.845 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[24]    ; LHCCLK     ; -6.835 ; -6.835 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[25]    ; LHCCLK     ; -6.799 ; -6.799 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[26]    ; LHCCLK     ; -7.450 ; -7.450 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[27]    ; LHCCLK     ; -6.235 ; -6.235 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[28]    ; LHCCLK     ; -6.660 ; -6.660 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[29]    ; LHCCLK     ; -6.176 ; -6.176 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[30]    ; LHCCLK     ; -7.429 ; -7.429 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  A[31]    ; LHCCLK     ; -6.936 ; -6.936 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+; B[*]      ; LHCCLK     ; -4.715 ; -4.715 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[0]     ; LHCCLK     ; -5.275 ; -5.275 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[1]     ; LHCCLK     ; -5.515 ; -5.515 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[2]     ; LHCCLK     ; -5.439 ; -5.439 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[3]     ; LHCCLK     ; -4.784 ; -4.784 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[4]     ; LHCCLK     ; -4.784 ; -4.784 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[5]     ; LHCCLK     ; -5.083 ; -5.083 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[6]     ; LHCCLK     ; -5.845 ; -5.845 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[7]     ; LHCCLK     ; -7.412 ; -7.412 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[8]     ; LHCCLK     ; -7.516 ; -7.516 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[9]     ; LHCCLK     ; -5.186 ; -5.186 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[10]    ; LHCCLK     ; -5.197 ; -5.197 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[11]    ; LHCCLK     ; -6.489 ; -6.489 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[12]    ; LHCCLK     ; -4.715 ; -4.715 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[13]    ; LHCCLK     ; -5.930 ; -5.930 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[14]    ; LHCCLK     ; -5.830 ; -5.830 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[15]    ; LHCCLK     ; -6.491 ; -6.491 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[16]    ; LHCCLK     ; -5.281 ; -5.281 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[17]    ; LHCCLK     ; -7.513 ; -7.513 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[18]    ; LHCCLK     ; -5.661 ; -5.661 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[19]    ; LHCCLK     ; -5.640 ; -5.640 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[20]    ; LHCCLK     ; -5.781 ; -5.781 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[21]    ; LHCCLK     ; -5.818 ; -5.818 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[22]    ; LHCCLK     ; -6.582 ; -6.582 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[23]    ; LHCCLK     ; -6.913 ; -6.913 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[24]    ; LHCCLK     ; -6.376 ; -6.376 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[25]    ; LHCCLK     ; -6.036 ; -6.036 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[26]    ; LHCCLK     ; -6.033 ; -6.033 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[27]    ; LHCCLK     ; -5.758 ; -5.758 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[28]    ; LHCCLK     ; -5.037 ; -5.037 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[29]    ; LHCCLK     ; -5.232 ; -5.232 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[30]    ; LHCCLK     ; -5.544 ; -5.544 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  B[31]    ; LHCCLK     ; -5.558 ; -5.558 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+; D[*]      ; LHCCLK     ; -6.504 ; -6.504 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  D[0]     ; LHCCLK     ; -7.220 ; -7.220 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  D[1]     ; LHCCLK     ; -7.182 ; -7.182 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  D[2]     ; LHCCLK     ; -6.979 ; -6.979 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  D[3]     ; LHCCLK     ; -6.504 ; -6.504 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  D[4]     ; LHCCLK     ; -7.078 ; -7.078 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  D[5]     ; LHCCLK     ; -6.622 ; -6.622 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  D[6]     ; LHCCLK     ; -7.792 ; -7.792 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  D[7]     ; LHCCLK     ; -7.720 ; -7.720 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+; IDD[*]    ; LHCCLK     ; -7.671 ; -7.671 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  IDD[0]   ; LHCCLK     ; -7.671 ; -7.671 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  IDD[1]   ; LHCCLK     ; -8.905 ; -8.905 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  IDD[2]   ; LHCCLK     ; -7.689 ; -7.689 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+; E[*]      ; LHCCLK     ; -8.147 ; -8.147 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  E[2]     ; LHCCLK     ; -9.101 ; -9.101 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  E[18]    ; LHCCLK     ; -8.147 ; -8.147 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+; IDE[*]    ; LHCCLK     ; -7.192 ; -7.192 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  IDE[0]   ; LHCCLK     ; -7.192 ; -7.192 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  IDE[1]   ; LHCCLK     ; -7.877 ; -7.877 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  IDE[2]   ; LHCCLK     ; -8.365 ; -8.365 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
++-----------+------------+--------+--------+------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                          ;
++-----------+------------+--------+--------+------------+----------------------------------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                        ;
++-----------+------------+--------+--------+------------+----------------------------------------+
+; E[*]      ; LHCCLK     ; 21.358 ; 21.358 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  E[13]    ; LHCCLK     ; 21.358 ; 21.358 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  E[29]    ; LHCCLK     ; 21.218 ; 21.218 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+; E[*]      ; LHCCLK     ;        ; 12.993 ; Fall       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  E[13]    ; LHCCLK     ;        ; 12.993 ; Fall       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  E[29]    ; LHCCLK     ;        ; 11.919 ; Fall       ; CLK_40to80|altpll_component|pll|clk[0] ;
+; E[*]      ; LHCCLK     ; 14.318 ; 14.318 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  E[13]    ; LHCCLK     ; 14.311 ; 14.311 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  E[29]    ; LHCCLK     ; 14.318 ; 14.318 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+; F[*]      ; LHCCLK     ; 11.208 ; 11.208 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  F[0]     ; LHCCLK     ; 9.478  ; 9.478  ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  F[1]     ; LHCCLK     ; 8.425  ; 8.425  ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  F[12]    ; LHCCLK     ; 11.208 ; 11.208 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  F[16]    ; LHCCLK     ; 9.995  ; 9.995  ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  F[28]    ; LHCCLK     ; 10.104 ; 10.104 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  F[29]    ; LHCCLK     ; 9.094  ; 9.094  ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+; E[*]      ; LHCCLK     ;        ; 13.220 ; Fall       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  E[13]    ; LHCCLK     ;        ; 13.220 ; Fall       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  E[29]    ; LHCCLK     ;        ; 12.436 ; Fall       ; CLK_40to80|altpll_component|pll|clk[1] ;
+; E[*]      ; LHCCLK     ; 14.940 ; 14.940 ; Rise       ; LHCCLK                                 ;
+;  E[13]    ; LHCCLK     ; 14.940 ; 14.940 ; Rise       ; LHCCLK                                 ;
+;  E[29]    ; LHCCLK     ; 13.613 ; 13.613 ; Rise       ; LHCCLK                                 ;
+; E[*]      ; LHCCLK     ; 14.940 ; 14.940 ; Fall       ; LHCCLK                                 ;
+;  E[13]    ; LHCCLK     ; 14.940 ; 14.940 ; Fall       ; LHCCLK                                 ;
+;  E[29]    ; LHCCLK     ; 13.613 ; 13.613 ; Fall       ; LHCCLK                                 ;
++-----------+------------+--------+--------+------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                  ;
++-----------+------------+--------+--------+------------+----------------------------------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                        ;
++-----------+------------+--------+--------+------------+----------------------------------------+
+; E[*]      ; LHCCLK     ; 11.919 ; 11.969 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  E[13]    ; LHCCLK     ; 12.993 ; 13.385 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  E[29]    ; LHCCLK     ; 11.919 ; 11.969 ; Rise       ; CLK_40to80|altpll_component|pll|clk[0] ;
+; E[*]      ; LHCCLK     ;        ; 11.919 ; Fall       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  E[13]    ; LHCCLK     ;        ; 12.993 ; Fall       ; CLK_40to80|altpll_component|pll|clk[0] ;
+;  E[29]    ; LHCCLK     ;        ; 11.919 ; Fall       ; CLK_40to80|altpll_component|pll|clk[0] ;
+; E[*]      ; LHCCLK     ; 10.633 ; 10.633 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  E[13]    ; LHCCLK     ; 11.732 ; 11.732 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  E[29]    ; LHCCLK     ; 10.633 ; 10.633 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+; F[*]      ; LHCCLK     ; 8.425  ; 8.425  ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  F[0]     ; LHCCLK     ; 9.478  ; 9.478  ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  F[1]     ; LHCCLK     ; 8.425  ; 8.425  ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  F[12]    ; LHCCLK     ; 11.208 ; 11.208 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  F[16]    ; LHCCLK     ; 9.995  ; 9.995  ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  F[28]    ; LHCCLK     ; 10.104 ; 10.104 ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  F[29]    ; LHCCLK     ; 9.094  ; 9.094  ; Rise       ; CLK_40to80|altpll_component|pll|clk[1] ;
+; E[*]      ; LHCCLK     ;        ; 12.436 ; Fall       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  E[13]    ; LHCCLK     ;        ; 13.220 ; Fall       ; CLK_40to80|altpll_component|pll|clk[1] ;
+;  E[29]    ; LHCCLK     ;        ; 12.436 ; Fall       ; CLK_40to80|altpll_component|pll|clk[1] ;
+; E[*]      ; LHCCLK     ; 13.613 ; 13.613 ; Rise       ; LHCCLK                                 ;
+;  E[13]    ; LHCCLK     ; 14.940 ; 14.940 ; Rise       ; LHCCLK                                 ;
+;  E[29]    ; LHCCLK     ; 13.613 ; 13.613 ; Rise       ; LHCCLK                                 ;
+; E[*]      ; LHCCLK     ; 13.613 ; 13.613 ; Fall       ; LHCCLK                                 ;
+;  E[13]    ; LHCCLK     ; 14.940 ; 14.940 ; Fall       ; LHCCLK                                 ;
+;  E[29]    ; LHCCLK     ; 13.613 ; 13.613 ; Fall       ; LHCCLK                                 ;
++-----------+------------+--------+--------+------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; Propagation Delay                                    ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; D[0]       ; E[13]       ; 20.577 ;    ;    ; 20.577 ;
+; D[0]       ; E[29]       ; 18.967 ;    ;    ; 18.967 ;
+; D[1]       ; E[13]       ; 19.319 ;    ;    ; 19.319 ;
+; D[1]       ; E[29]       ; 18.279 ;    ;    ; 18.279 ;
+; D[2]       ; E[13]       ; 19.815 ;    ;    ; 19.815 ;
+; D[2]       ; E[29]       ; 18.354 ;    ;    ; 18.354 ;
+; D[3]       ; E[13]       ; 18.621 ;    ;    ; 18.621 ;
+; D[3]       ; E[29]       ; 18.366 ;    ;    ; 18.366 ;
+; D[4]       ; E[13]       ; 19.538 ;    ;    ; 19.538 ;
+; D[4]       ; E[29]       ; 18.850 ;    ;    ; 18.850 ;
+; D[5]       ; E[13]       ; 19.139 ;    ;    ; 19.139 ;
+; D[5]       ; E[29]       ; 17.268 ;    ;    ; 17.268 ;
+; D[6]       ; E[13]       ; 20.912 ;    ;    ; 20.912 ;
+; D[6]       ; E[29]       ; 21.455 ;    ;    ; 21.455 ;
+; D[7]       ; E[13]       ; 21.445 ;    ;    ; 21.445 ;
+; D[7]       ; E[29]       ; 20.630 ;    ;    ; 20.630 ;
+; E[2]       ; E[13]       ; 22.067 ;    ;    ; 22.067 ;
+; E[2]       ; E[29]       ; 21.391 ;    ;    ; 21.391 ;
+; E[18]      ; E[13]       ; 20.524 ;    ;    ; 20.524 ;
+; E[18]      ; E[29]       ; 19.378 ;    ;    ; 19.378 ;
+; IDD[0]     ; E[13]       ; 21.517 ;    ;    ; 21.517 ;
+; IDD[0]     ; E[29]       ; 22.060 ;    ;    ; 22.060 ;
+; IDD[1]     ; E[13]       ; 22.761 ;    ;    ; 22.761 ;
+; IDD[1]     ; E[29]       ; 23.304 ;    ;    ; 23.304 ;
+; IDD[2]     ; E[13]       ; 21.559 ;    ;    ; 21.559 ;
+; IDD[2]     ; E[29]       ; 22.102 ;    ;    ; 22.102 ;
+; IDE[0]     ; E[13]       ; 20.250 ;    ;    ; 20.250 ;
+; IDE[0]     ; E[29]       ; 19.482 ;    ;    ; 19.482 ;
+; IDE[1]     ; E[13]       ; 20.936 ;    ;    ; 20.936 ;
+; IDE[1]     ; E[29]       ; 20.167 ;    ;    ; 20.167 ;
+; IDE[2]     ; E[13]       ; 21.425 ;    ;    ; 21.425 ;
+; IDE[2]     ; E[29]       ; 20.655 ;    ;    ; 20.655 ;
+; IDF[0]     ; F[0]        ; 11.850 ;    ;    ; 11.850 ;
+; IDF[0]     ; F[1]        ; 11.500 ;    ;    ; 11.500 ;
+; IDF[0]     ; F[12]       ; 13.673 ;    ;    ; 13.673 ;
+; IDF[0]     ; F[16]       ; 12.885 ;    ;    ; 12.885 ;
+; IDF[0]     ; F[28]       ; 12.256 ;    ;    ; 12.256 ;
+; IDF[0]     ; F[29]       ; 11.824 ;    ;    ; 11.824 ;
+; IDF[1]     ; F[0]        ; 13.450 ;    ;    ; 13.450 ;
+; IDF[1]     ; F[1]        ; 12.855 ;    ;    ; 12.855 ;
+; IDF[1]     ; F[12]       ; 15.026 ;    ;    ; 15.026 ;
+; IDF[1]     ; F[16]       ; 14.243 ;    ;    ; 14.243 ;
+; IDF[1]     ; F[28]       ; 13.618 ;    ;    ; 13.618 ;
+; IDF[1]     ; F[29]       ; 13.182 ;    ;    ; 13.182 ;
+; IDF[2]     ; F[0]        ; 12.482 ;    ;    ; 12.482 ;
+; IDF[2]     ; F[1]        ; 11.513 ;    ;    ; 11.513 ;
+; IDF[2]     ; F[12]       ; 13.686 ;    ;    ; 13.686 ;
+; IDF[2]     ; F[16]       ; 12.898 ;    ;    ; 12.898 ;
+; IDF[2]     ; F[28]       ; 12.269 ;    ;    ; 12.269 ;
+; IDF[2]     ; F[29]       ; 11.837 ;    ;    ; 11.837 ;
+; LCLK       ; E[13]       ; 15.595 ;    ;    ; 15.595 ;
+; LCLK       ; E[29]       ; 13.830 ;    ;    ; 13.830 ;
++------------+-------------+--------+----+----+--------+
+
+
++------------------------------------------------------+
+; Minimum Propagation Delay                            ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; D[0]       ; E[13]       ; 20.577 ;    ;    ; 20.577 ;
+; D[0]       ; E[29]       ; 18.967 ;    ;    ; 18.967 ;
+; D[1]       ; E[13]       ; 19.319 ;    ;    ; 19.319 ;
+; D[1]       ; E[29]       ; 18.279 ;    ;    ; 18.279 ;
+; D[2]       ; E[13]       ; 19.815 ;    ;    ; 19.815 ;
+; D[2]       ; E[29]       ; 18.354 ;    ;    ; 18.354 ;
+; D[3]       ; E[13]       ; 18.621 ;    ;    ; 18.621 ;
+; D[3]       ; E[29]       ; 18.366 ;    ;    ; 18.366 ;
+; D[4]       ; E[13]       ; 19.538 ;    ;    ; 19.538 ;
+; D[4]       ; E[29]       ; 18.850 ;    ;    ; 18.850 ;
+; D[5]       ; E[13]       ; 19.139 ;    ;    ; 19.139 ;
+; D[5]       ; E[29]       ; 17.268 ;    ;    ; 17.268 ;
+; D[6]       ; E[13]       ; 20.912 ;    ;    ; 20.912 ;
+; D[6]       ; E[29]       ; 21.455 ;    ;    ; 21.455 ;
+; D[7]       ; E[13]       ; 21.445 ;    ;    ; 21.445 ;
+; D[7]       ; E[29]       ; 20.630 ;    ;    ; 20.630 ;
+; E[2]       ; E[13]       ; 22.067 ;    ;    ; 22.067 ;
+; E[2]       ; E[29]       ; 21.391 ;    ;    ; 21.391 ;
+; E[18]      ; E[13]       ; 20.524 ;    ;    ; 20.524 ;
+; E[18]      ; E[29]       ; 19.378 ;    ;    ; 19.378 ;
+; IDD[0]     ; E[13]       ; 20.178 ;    ;    ; 20.178 ;
+; IDD[0]     ; E[29]       ; 18.684 ;    ;    ; 18.684 ;
+; IDD[1]     ; E[13]       ; 21.364 ;    ;    ; 21.364 ;
+; IDD[1]     ; E[29]       ; 19.928 ;    ;    ; 19.928 ;
+; IDD[2]     ; E[13]       ; 20.197 ;    ;    ; 20.197 ;
+; IDD[2]     ; E[29]       ; 18.725 ;    ;    ; 18.725 ;
+; IDE[0]     ; E[13]       ; 20.158 ;    ;    ; 20.158 ;
+; IDE[0]     ; E[29]       ; 19.104 ;    ;    ; 19.104 ;
+; IDE[1]     ; E[13]       ; 20.843 ;    ;    ; 20.843 ;
+; IDE[1]     ; E[29]       ; 19.790 ;    ;    ; 19.790 ;
+; IDE[2]     ; E[13]       ; 21.331 ;    ;    ; 21.331 ;
+; IDE[2]     ; E[29]       ; 20.279 ;    ;    ; 20.279 ;
+; IDF[0]     ; F[0]        ; 11.850 ;    ;    ; 11.850 ;
+; IDF[0]     ; F[1]        ; 11.500 ;    ;    ; 11.500 ;
+; IDF[0]     ; F[12]       ; 13.673 ;    ;    ; 13.673 ;
+; IDF[0]     ; F[16]       ; 12.885 ;    ;    ; 12.885 ;
+; IDF[0]     ; F[28]       ; 12.256 ;    ;    ; 12.256 ;
+; IDF[0]     ; F[29]       ; 11.824 ;    ;    ; 11.824 ;
+; IDF[1]     ; F[0]        ; 13.450 ;    ;    ; 13.450 ;
+; IDF[1]     ; F[1]        ; 12.855 ;    ;    ; 12.855 ;
+; IDF[1]     ; F[12]       ; 15.026 ;    ;    ; 15.026 ;
+; IDF[1]     ; F[16]       ; 14.243 ;    ;    ; 14.243 ;
+; IDF[1]     ; F[28]       ; 13.618 ;    ;    ; 13.618 ;
+; IDF[1]     ; F[29]       ; 13.182 ;    ;    ; 13.182 ;
+; IDF[2]     ; F[0]        ; 12.482 ;    ;    ; 12.482 ;
+; IDF[2]     ; F[1]        ; 11.513 ;    ;    ; 11.513 ;
+; IDF[2]     ; F[12]       ; 13.686 ;    ;    ; 13.686 ;
+; IDF[2]     ; F[16]       ; 12.898 ;    ;    ; 12.898 ;
+; IDF[2]     ; F[28]       ; 12.269 ;    ;    ; 12.269 ;
+; IDF[2]     ; F[29]       ; 11.837 ;    ;    ; 11.837 ;
+; LCLK       ; E[13]       ; 15.595 ;    ;    ; 15.595 ;
+; LCLK       ; E[29]       ; 13.830 ;    ;    ; 13.830 ;
++------------+-------------+--------+----+----+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                             ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+; From Clock                             ; To Clock                               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 17424    ; 0        ; 0        ; 0        ;
+; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[0] ; 2        ; 0        ; 0        ; 0        ;
+; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 8620     ; 0        ; 0        ; 0        ;
+; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 1001     ; 0        ; 0        ; 0        ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                              ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+; From Clock                             ; To Clock                               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[0] ; 17424    ; 0        ; 0        ; 0        ;
+; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[0] ; 2        ; 0        ; 0        ; 0        ;
+; CLK_40to80|altpll_component|pll|clk[0] ; CLK_40to80|altpll_component|pll|clk[1] ; 8620     ; 0        ; 0        ; 0        ;
+; CLK_40to80|altpll_component|pll|clk[1] ; CLK_40to80|altpll_component|pll|clk[1] ; 1001     ; 0        ; 0        ; 0        ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 1     ; 1    ;
+; Unconstrained Input Ports       ; 105   ; 105  ;
+; Unconstrained Input Port Paths  ; 447   ; 447  ;
+; Unconstrained Output Ports      ; 25    ; 25   ;
+; Unconstrained Output Port Paths ; 543   ; 543  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II TimeQuest Timing Analyzer
+    Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed May 13 12:12:51 2015
+Info: Command: quartus_sta LHCF_LOGIC_MAIN -c LHCF_FC_SCALER
+Info: qsta_default_script.tcl version: #1
+Warning: Parallel compilation is not licensed and has been disabled
+Info: Reading SDC File: 'LHCF_LOGIC_MAIN.sdc'
+Info:  You called derive_pll_clocks. User-defined clock found on pll: CLK_40to80|altpll_component|pll|clk[0]. Original clock has priority over derived pll clocks. No clocks added to this pll.
+Info:  You called derive_pll_clocks. User-defined clock found on pll: CLK_40to80|altpll_component|pll|clk[1]. Original clock has priority over derived pll clocks. No clocks added to this pll.
+Warning: Node: LCLK was determined to be a clock but was found without an associated clock assignment.
+Info: Worst-case setup slack is 2.823
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     2.823         0.000 CLK_40to80|altpll_component|pll|clk[1] 
+    Info:     3.552         0.000 CLK_40to80|altpll_component|pll|clk[0] 
+Info: Worst-case hold slack is 0.644
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     0.644         0.000 CLK_40to80|altpll_component|pll|clk[0] 
+    Info:     0.804         0.000 CLK_40to80|altpll_component|pll|clk[1] 
+Info: No Recovery paths to report
+Info: No Removal paths to report
+Info: Worst-case minimum pulse width slack is 5.016
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     5.016         0.000 CLK_40to80|altpll_component|pll|clk[0] 
+    Info:    11.266         0.000 CLK_40to80|altpll_component|pll|clk[1] 
+    Info:    12.500         0.000 LHCCLK 
+Info: The selected device family is not supported by the report_metastability command.
+Info: Design is not fully constrained for setup requirements
+Info: Design is not fully constrained for hold requirements
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 240 megabytes
+    Info: Processing ended: Wed May 13 12:12:54 2015
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:01
+
+

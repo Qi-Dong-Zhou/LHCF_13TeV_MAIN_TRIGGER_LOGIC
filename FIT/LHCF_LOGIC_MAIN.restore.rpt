@@ -1,0 +1,137 @@
+Restore Archived Project report for LHCF_LOGIC_MAIN
+Wed May 13 11:35:23 2015
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Restore Archived Project Summary                                        ;
++---------------------------------+---------------------------------------+
+; Restore Archived Project Status ; Successful - Wed May 13 11:35:23 2015 ;
+; Revision Name                   ; LHCF_LOGIC_MAIN                       ;
+; Top-level Entity Name           ; LHCF_LOGIC_MAIN                       ;
+; Family                          ; Cyclone                               ;
++---------------------------------+---------------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Info: Successfully restored '//psf/Dropbox/LHCf/TriggerSystem/LHCF_13TeV_MAIN_20150511/FIT/LHCF_LOGIC_MAIN_tmp_archive.qar' into the 'C:/FPGA/TriggerSystem/Quartus2/LHCF_13TeV_MAIN_ver1/FIT' directory
+Info: Generated report 'LHCF_LOGIC_MAIN.restore.rpt'
+
+
++------------------------------------------------------------+
+; Files Restored                                             ;
++------------------------------------------------------------+
+; File Name                                                  ;
++------------------------------------------------------------+
+; LHCF_FC_SCALER.qsf                                         ;
+; LHCF_FC_SCALER_assignment_defaults.qdf                     ;
+; LHCF_LOGIC_MAIN.qpf                                        ;
+; LHCF_LOGIC_MAIN.qsf                                        ;
+; LHCF_LOGIC_MAIN.sdc                                        ;
+; LHCF_LOGIC_MAIN_assignment_defaults.qdf                    ;
+; assignment_defaults.qdf                                    ;
+; incremental_db/compiled_partitions/LHCF_FC_SCALER.db_info  ;
+; incremental_db/compiled_partitions/LHCF_LOGIC_MAIN.db_info ;
+; SRC/BUFFER_COUNTER.vhd                                     ;
+; SRC/BUFFER_SIGNAL.vhd                                      ;
+; SRC/CLKMHZ.vhd                                             ;
+; SRC/CLK_COUNTER.vhd                                        ;
+; SRC/CLK_COUNTER2.vhd                                       ;
+; SRC/CLK_COUNTER3.vhd                                       ;
+; SRC/CLK_PULSE.vhd                                          ;
+; SRC/CONTROL_FLAG.vhd                                       ;
+; SRC/COUNTER_N.vhd                                          ;
+; SRC/DESWIDTH.vhd                                           ;
+; SRC/FC_MODULE.vhd                                          ;
+; SRC/FC_MODULE01.vhd                                        ;
+; SRC/FC_WIDTH.vhd                                           ;
+; SRC/FIFO_COUNTER.vhd                                       ;
+; SRC/GATEandDELAY.vhd                                       ;
+; SRC/INTERNALCOUNTER.vhd                                    ;
+; SRC/INTERNALCOUNTER3.vhd                                   ;
+; SRC/INTERNALCOUNTER4.vhd                                   ;
+; SRC/LATCH_M.vhd                                            ;
+; SRC/LHCF_FC_SCALER.vhd                                     ;
+; SRC/LHCF_LOGIC_MAIN.vhd                                    ;
+; SRC/LINEDELAY.vhd                                          ;
+; SRC/LINEDELAY_FIX.vhd                                      ;
+; SRC/LOGIC_BPTX.vhd                                         ;
+; SRC/LOGIC_BPTX01.vhd                                       ;
+; SRC/LOGIC_FC.vhd                                           ;
+; SRC/LOGIC_FC01.vhd                                         ;
+; SRC/MUX.vhd                                                ;
+; SRC/PLL.cmp                                                ;
+; SRC/PLL.ppf                                                ;
+; SRC/PLL.qip                                                ;
+; SRC/PLL.vhd                                                ;
+; SRC/PRESETCOUNTER.vhd                                      ;
+; SRC/RAM_COUNTER.vhd                                        ;
+; SRC/RAM_DPORT_A6D32.cmp                                    ;
+; SRC/RAM_DPORT_A6D32.qip                                    ;
+; SRC/RAM_DPORT_A6D32.vhd                                    ;
+; SRC/SCOUNTER.vhd                                           ;
+; SRC/SCOUNTER3.vhd                                          ;
+; SRC/SHIFT_REG_A.vhd                                        ;
+; SRC/SHIFT_REG_B.vhd                                        ;
+; SRC/SHOWER_MODULE.vhd                                      ;
+; SRC/SHOWER_MODULE02.vhd                                    ;
+; SRC/SOUNTER_2LATCH.vhd                                     ;
+; SRC/SPECIAL_TRG_MODULE.vhd                                 ;
+; SRC/SPECIAL_TRG_MODULE02.vhd                               ;
+; SRC/SYC_WIDTH.vhd                                          ;
+; SRC/SYNCHRONIZE.vhd                                        ;
+; SRC/TESTOUT.vhd                                            ;
+; SRC/TESTOUT_FC_SCALER.vhd                                  ;
+; SRC/clk_divi.vhd                                           ;
+; SRC/components.vhd                                         ;
+; SRC/lb_int.vhd                                             ;
+; SRC/lb_int_FC_SCALER.vhd                                   ;
+; SRC/shift_reg.vhd                                          ;
+; SRC/triggerlogic01.vhd                                     ;
+; SRC/triggerlogic02.vhd                                     ;
+; SRC/triggerlogic05.vhd                                     ;
+; SRC/triggerlogic06.vhd                                     ;
+; SRC/triggerlogic07.vhd                                     ;
+; SRC/triggerlogic08.vhd                                     ;
++------------------------------------------------------------+
+
+
++--------------------+
+; Files Not Restored ;
++--------------------+
+; File Name          ;
++--------------------+
+
+
